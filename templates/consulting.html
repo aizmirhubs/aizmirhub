@@ -1,0 +1,607 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .circle-button {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+
+    /* Neon efektli yeşil */
+    .neon-green {
+        background-color: #00e676;
+        box-shadow: 0 0 6px #00e676, 0 0 16px #00ff95, 0 0 24px #00ffae;
+        border: 2px solid #00ffb7;
+    }
+
+    /* Neon efektli turuncu */
+    .neon-orange {
+        background-color: #ff7f50;
+        box-shadow: 0 0 6px #ff7f50, 0 0 16px #ffa366, 0 0 24px #ffc299;
+        border: 2px solid #ffad66;
+    }
+
+    /* Hover büyüme efekti */
+    .circle-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Tooltip (isteğe bağlı) */
+    .circle-button:hover::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -32px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(30, 30, 30, 0.9);
+        color: white;
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 99;
+    }
+</style>
+<br><br>
+<!-- Backed By Section -->
+<section class="backed-section">
+    <h1 class="section-title">GELECEĞI ŞEKİLLENDİREN YAPAY ZEKA
+        DANIŞMANLARI VE EĞİTMENLERİ</h1>
+
+    <div class="sponsors-grid">
+        <!-- NVIDIA -->
+        <div class="sponsor-card">
+            <div class="sponsor-name nvidia">EĞİTİM HİZMETİ</div>
+            <div class="program-name"></div>
+        </div>
+
+        <!-- Founders Hub -->
+        <div class="sponsor-card">
+            <div class="sponsor-name founders-hub">DANIŞMANLIK HİZMETİ</div>
+        </div>
+    </div>
+</section>
+<div class="ai-hub-container">
+    <!-- 1.card (caner şekerci) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Caner Şekerci</h3>
+                <p>Yapay zeka uzmanı olarak 9 yıldır görev yapmaktadır.
+                    Stanford University'den destek alarak proje geliştirmeye devam etmektedir.
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Çeşitli yurt içi ve yurt dışı projelerde silikon vadisinde geliştirilen
+                    projelerde görev aldım ve takım liderliği yapmıştır.
+                    Yapay Zeka Eğitmenliği yapıyor.
+                    Python programlama dilinde çalışmalarımı sürdürmekteyim. Python programlama dilinde çalışmalarımı
+                    sürdürmekteyim. </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/canersekerci/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/caner şekerci.jpg" style="height: 310px; width: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 2.card (ahmet oktay)-->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Ahmet Oktay</h3>
+                <p>Yapay Zeka Uzmanlığı: Derin öğrenme, doğal dil
+                    işleme ve bilgisayarlı görü gibi yapay zeka alanlarında
+                    uzmandır.
+                    <br>Veri Bilimi Yetenekleri: Büyük veri analizi, makine
+                    öğrenimi modelleme ve veri görselleştirme
+                    konularında deneyimlidir.
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">İnovasyon Odaklılık: Yapay zeka alanındaki en son
+                    gelişmeleri takip ederek, şirketlerin inovasyon
+                    kapasitesini artırır.
+                    <br>
+                    İş Geliştirme Deneyimi
+                    <br>
+                    Dijital Dönüşüm Vizyonu: Şirketlerin dijital dönüşüm
+                    süreçlerini yapay zeka odaklı stratejilerle yönetme ve
+                    rekabet avantajı elde etmelerini sağlama yeteneğine
+                    sahiptir.
+
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/ahmet-oktay-/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/ahmet oktay.jpg" style="height: 320px; width: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 3.card (süleyman kaplan ) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Süleyman Kaplan</h3>
+                <p>Yapay Zeka ve Veri Bilimi: GPT/LLM projeleri, makine
+                    öğrenmesi uygulamaları ve veri odaklı karar alma
+                    süreçleri
+                    <br>
+                    İş Geliştirme ve Stratejik Yönetim: Erken aşama
+                    girişimleri kurma, büyütme ve ölçeklendirme
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Proje ve Ekip Yönetimi: Ar-Ge süreçleri, takım
+                    koordinasyonu ve inovasyon odaklı çalışmalar
+                    <br>
+                    Danışmanlık ve Mentorluk: Kurumsal yapılar ve
+                    bireysel projelerde strateji geliştirme, operasyonel
+                    verimlilik ve rekabet avantajı sağlama
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/suleyman-kaplan/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/süleymankaplan.jpeg" alt="Alzmir Hub Illustration"
+                style="height: 350px; width: 280px;" alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 4.card(gülüzar kurt gümüş)  -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Prof. Dr Gülüzar Kurt Gümüş</h3>
+                <p>Prof. Dr. Gülüzar KURT GÜMÜŞ Dokuz Eylül Üniversitesi İşletme Fakültesi Uluslararası Ticaret ve
+                    İşletmecilik Bölümü öğretim üyesidir. Finans ve girişimcilik alanında akademik ve sektörel
+                    çalışmalar yapmaktadır, dersler ve eğitimler vermektedir.
+
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Üniversitedeki yirmi
+                    yılı aşkın eğitim ve araştırma deneyiminin yanı sıra, sektör deneyimine de sahiptir.Dokuz Eylül
+                    Üniversitesi Bambu Kuluçka Merkezi girişimcilik eğitmenidir.</p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/profdrg%C3%BCl%C3%BCzarkurtg%C3%BCm%C3%BC%C5%9F/"
+                    class="ai-hub-doc-button" style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/gülüzarkurt.jpeg" alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 5.card (ömer berkay dağlı) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Ömer Berkay Dağlı</h3>
+                <p>Agile, Scrum ve Hibrit Proje Yaklaşımları
+                    AI Destekli Proje Risk Analizi ve Süreç İyileştirme
+                    <br>
+                    Kurumsal Proje Ofisi (PMO) Kurulumu ve Yönetimi
+                    <br>
+                    Satış ve Pazarlamada CRM ve AI Entegrasyonları
+                    <br>
+                    AI ile Satış Süreçlerinde Tahminleme ve Raporlama
+                    AI Tabanlı Portföy ve Yatırım Stratejileri
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Stratejik Yönetimde KPI ve Performans İzleme
+                    Sistemleri
+                    <br>
+                    Yönetim Seviyesi için Karar Destek Sistemleri <br> AI
+                    Kurumsal Portföy ve Program Yönetimi ile Büyüme
+                    Planlaması
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/obd/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/Ömer Berkay  Dağlı.jpeg" style="height: 350px; width: 300px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 6.card (serenay uslu) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Serenay Uslu </h3>
+                <p>Proje Geliştirme ve Uygulama Stratejileri
+                    <br>
+                    Portföy Yönetimi ve Proje Önceliklendirme Teknikleri
+                    <br>
+                    Satışta Yapay Zeka Kullanımı ve Satış Otomasyonu
+                    <br>
+                    Kurumsal Satış ve Müzakere Teknikleri
+                    <br>
+                    B2B ve B2C Satışta Stratejik Yaklaşımlar
+                    Satış ve Pazarlamada CRM ve AI Entegrasyonlar
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Stratejik Yönetimde KPI ve Performans İzleme
+                    Sistemleri
+                    Liderlik ve Ekip Yönetiminde Dijital Dönüşüm
+                    <br>
+                    Yönetim Seviyesi için Karar Destek Sistemleri ve AI
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/serenay-uslu/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/serenay uslu.jpeg" style="width: 300px; height: 300px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 7.card (hande özer gürbüz)-->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Hande Özer Gürbüz</h3>
+                <p>Girişimcilik Ekosistemi Deneyimi: 9 yıllık deneyimle,
+                    kamu hibe ve teşvikleri, pitch deck hazırlama, iş
+                    modeli kanvası gibi konularda uzmandır.
+                    Teknoloji Transfer Ofislerinde başlayan kariyeri
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Teknoloji Transfer Ofislerinde başlayan kariyeri
+                    boyunca StartGate TEKMER, İTÜ ARI Teknokent,
+                    Düzce Teknopark ve Marmara Üniversitesi Teknokent
+                    gibi önemli teknokentlerde startuplar için proje ve iş
+                    geliştirme, hızlandırma programları, hackathon ve
+                    game jam etkinlikleri düzenlemiş ve startuplara
+                    mentorluk yapmıştır.
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/hande-zer/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/hande özer gürbüz.jpeg" style="width: 310px; height: 310px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 8.card (batuhan gürbüz) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Batuhan Gürbüz</h3>
+                <p>AI Oyun Prodüksiyonu: Oyun geliştirme süreçlerinde
+                    deneyimli ve stratejik kararla
+                    <br>
+                    İş Stratejisi: Şirketlerin büyüme hedeflerine ulaşması
+                    için stratejik planlar oluşturma
+                    <br>
+                    Yatırım Hazırlığı: Şirketlerin yatırımcılar için çekici
+                    hale gelmesini sağlayacak stratejiler geliştirme
+                    <br>
+                    Pazar Analizi: Pazar trendlerini ve rekabet ortamını
+                    analiz ederek, şirketlerin doğru kararlar alma
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Proje Planlama: Projelerin başarılı bir şekilde
+                    tamamlanması için detaylı planlar oluşturma
+                    <br>
+                    Bütçe Planlama: Şirketlerin finansal kaynaklarını etkili
+                    bir şekilde yönetmek için bütçe planları hazırlama ve
+                    uygulama becerisine sahiptir.
+                    <br>
+                    Sunum Stratejileri
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="#" class="ai-hub-doc-button" style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/batuhan gürbüz.jpeg" style="width: 280px; height: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 9.card (berkay gülbeyaz) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Berkay Gülbeyaz</h3>
+                <p>Girişimcilik, yatırım, yapay zeka ekosisteminde 6 yıldır
+                    çeşitli görevler almaktadır.
+                    <br>
+                    Yapay Zeka ve Makine Öğrenimi (AI & Machine
+                    Learning)
+                    <br>
+                    Python, SQL, Big Data
+                    <br>
+                    Geçmişte 3 teknoloji girişimi deneyimi
+
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Yazılım Geliştirme (Software Development)
+                    <br>
+                    Front-end geliştirme: HTML, CSS, JavaScript,
+                    React.js, Angular, Node.js
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/berkay-g%C3%BClbeyaz/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/berkay_gulbeyaz.jpeg" style="width: 260px; height: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 10.card (esra ışim şahbazoplu) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Esra Işim Şahbazoğlu</h3>
+                <p>Fullstack Developer
+                    <br>
+                    Yapay Zeka ve Makine Öğrenimi (AI & Machine
+                    Learning)
+                    <br>
+                    Python, SQL, Big Data, Natural Language Processing
+                    (NLP)
+                    <br>
+                    AI eğitmenliği
+                    Front-end geliştirme: HTML, CSS, JavaScript,
+                    <br>
+                    React.js, Angular, Node.js
+
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle">Dijital dönüşüm projeleri
+                    <br>
+                    İstanbul Teknik Üniversitesi sertifikalı dijital
+                    pazarlama uzmanlığı
+                    <br>
+                    Eğitim & Akademik Araştırmalar
+                    <br>
+                    Fizik alanında akademik araştırmalar
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/esra-sahpazoglu-isim/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <!-- Afili yeşil buton -->
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+            <!-- Afili turuncu buton -->
+            <a href="https://calendly.com/aizmirhub-info/30min?month=2025-04" class="circle-button neon-orange"
+                title="Danışmanlık"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/esra_isim_sahbazoglu.jpeg" style="width: 280px; height: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 11.card (mehtap avcı) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>M.Mehtap Avcı</h3>
+                <p>AI Development, Frontend ve Backend alanlarında güçlü proje deneyimine sahibim;
+                    <br>
+                    React, JavaScript, Python ve Django teknolojileriyle uçtan uca yazılım çözümleri geliştiriyorum.
+                    <br>
+                    Web teknolojileri, API entegrasyonları ve yapay zeka tabanlı uygulamalarda eğitmenlik tecrübemle
+                    bilgi aktarımını etkili ve ilham verici hale getiriyorum.
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle"> Analitik düşünme becerilerimi ekonometri altyapımla destekliyor, veriye
+                    dayalı, sürdürülebilir ve yenilikçi yazılım eğitimleri sunuyorum.
+
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/m-mehtap-avci-1a03a5273/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/mehtap_avci.png" style="width: 280px; height: 320px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 12.card (özgür çetin) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Özgür Çetin</h3>
+                <p>Yenilikçi çözümler üreten bir Fullstack Developer ve Frontend Eğitmeni olarak, HTML, CSS, JavaScript
+                    ve React ile kullanıcı dostu arayüzler geliştiriyorum. Python, SQL ve MATLAB bilgimle Yapay Zeka,
+                    Makine Öğrenimi ve Doğal Dil İşleme alanlarında güçlü projelere imza atıyor, veriden anlam çıkaran
+                    akıllı sistemler tasarlıyorum.
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle"> ABig Data’dan NLP’ye uzanan geniş teknik altyapım sayesinde, dijital dünyayı
+                    daha akıllı ve etkili hale getiren teknolojilere yön veriyorum
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/%C3%B6zg%C3%BCr-%C3%A7etin-168419219/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/ozgur_cetin.jpg" style="width: 300px; height: 310px;"
+                alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+    <br><br>
+    <!-- 13.card(nur yalçın) -->
+    <div class="ai-hub-card">
+        <div class="ai-hub-content">
+            <div class="ai-hub-feature">
+                <h3>Nur Yalçın</h3>
+                <p>AI Development, Frontend ve Backend alanlarında deneyim sahibiyim;
+                    <br>
+                    JavaScript, Python ve Django teknolojileriyle uçtan uca yazılım çözümleri geliştiriyorum.
+                </p>
+            </div>
+            <div class="ai-hub-features">
+                <p class="ai-hub-subtitle"> Analitik düşünme becerilerimi ekonometri altyapımla destekliyor, veriye
+                    dayalı, sürdürülebilir ve yenilikçi yazılım eğitimleri sunuyorum.
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/m-mehtap-avci-1a03a5273/" class="ai-hub-doc-button"
+                    style="padding: 8px 12px; font-size: 14px;">Daha fazla bilgi →</a>
+                <a href="https://calendly.com/aizmirhub-info/30min" class="ai-hub-doc-button" target="_blank"
+                    style="padding: 8px 19px; font-size: 14px;">İletişime Geç</a>
+            </div>
+            <br>
+            <a href="#projeler" class="circle-button neon-green" title="Eğitim"></a>
+
+        </div>
+        <div class="ai-hub-image">
+            <img src="/static/images/nur_yalcin.jpg" style="width: 250px; height: 320px;" alt="Alzmir Hub Illustration">
+        </div>
+    </div>
+</div>
+{% endblock %}

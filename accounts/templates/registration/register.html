@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-form">
+        <h2 class=" auth-title text-center mb-4">Kayıt Ol</h2>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="form-group mb-3">
+                <label for="{{ form.username.id_for_label }}">Kullanıcı Adı</label>
+                {{ form.username }}
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="{{ form.email.id_for_label }}">E-posta</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="{{ form.password1.id_for_label }}">Şifre</label>
+                {{ form.password1 }}
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="{{ form.password2.id_for_label }}">Şifre Tekrar</label>
+                {{ form.password2 }}
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+
+            <div class="text-center mt-3">
+                Zaten hesabınız var mı? <a href="{% url 'login' %}">Giriş Yap</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

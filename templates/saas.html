@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .aiflow-container {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 16px;
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+        border: 1px solid rgba(168, 85, 247, 0.1);
+    }
+
+    .aiflow-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        background: linear-gradient(90deg, #a855f7, #9333ea);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .model-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 14px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .model-card img {
+        width: 120px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .model-info h5 {
+        font-size: 1.3em;
+        color: #c084fc;
+        margin-bottom: 10px;
+    }
+
+    .model-info p {
+        font-size: 0.9em;
+        color: #e2e8f0;
+    }
+
+    .platform-features h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #f472b6;
+        text-align: center;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 sütun */
+        gap: 30px;
+        margin-top: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+    .platform-features li {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        border-left: 4px solid #a855f7;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+        margin-bottom: 10px;
+        font-size: 0.9em;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        height: 100%;
+    }
+
+
+    .platform-features ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .platform-features li {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        border-left: 4px solid #a855f7;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+        margin-bottom: 10px;
+        font-size: 0.9em;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .platform-features li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+    }
+
+    .features-grid li strong {
+        color: #c084fc;
+    }
+
+    .platform-features strong {
+        color: #c084fc;
+    }
+
+
+
+    .model-author {
+        text-align: right;
+        font-size: 0.9em;
+        color: #94a3b8;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ----------------------------------- */
+    .platform-benefits {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* bu satır */
+        gap: 30px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .benefit-card {
+        /* background: rgba(255, 255, 255, 0.1); */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        color: #e2e8f0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .platform-benefits .benefit-card {
+        flex: 1 1 calc(33.333% - 20px);
+        box-sizing: border-box;
+    }
+
+    .benefits-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #f472b6;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .benefit-card img {
+        width: 50px;
+        margin-bottom: 15px;
+    }
+
+    .benefit-card h4 {
+        font-size: 1em;
+        color: #c084fc;
+        margin-bottom: 10px;
+    }
+
+    .benefit-card p {
+        font-size: 0.8em;
+        color: #e2e8f0;
+    }
+
+    .product-owner-benefits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .product-image-wrapper {
+        width: 100%;
+        margin: 0 auto 30px auto;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        background: rgba(255, 255, 255, 0.02);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Yatay görseller geniş ama kısa */
+    .product-image-wrapper.horizontal {
+        max-width: 800px;
+        height: auto;
+    }
+
+    .product-image-wrapper.horizontal img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    /* Dikey görseller dar ama uzun */
+    .product-image-wrapper.vertical {
+        max-width: 500px;
+        height: auto;
+    }
+
+    .product-image-wrapper.vertical img {
+        width: 100%;
+        height: 450px;
+        object-fit: contain;
+    }
+
+    .product-image-adjust {
+        border-radius: 16px;
+        display: block;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+
+        .product-image-wrapper.horizontal img,
+        .product-image-wrapper.vertical img {
+
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-image-wrapper {
+            max-width: 100%;
+        }
+    }
+
+    /* Mobil uyum için */
+    @media (max-width: 768px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        .platform-benefits {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .platform-benefits {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .product-owner-benefits {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .product-owner-benefits {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-image-adjust {
+            max-height: 300px;
+        }
+    }
+
+    .dynamic-underline {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        font-weight: bold;
+        color: #f472b6;
+    }
+
+    .dynamic-underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        animation: slide-bg 3s linear infinite;
+    }
+
+    @keyframes slide-bg {
+        0% {
+            background-position: 0%;
+        }
+
+        100% {
+            background-position: 200%;
+        }
+    }
+
+    h3:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+        color: #c084fc;
+    }
+
+    .product-owner-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap: 30px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+            0 0 40px rgba(192, 132, 252, 0.2);
+        0 0 25px rgba(236, 72, 153, 0.5),
+        0 0 50px rgba(192, 132, 252, 0.4);
+    }
+</style>
+
+<div class="aiflow-container">
+    <h2 class="aiflow-title">Saas Ürünümüz ve Özellikleri </h2>
+    <div class="model-card">
+        <!-- Logo ve Proje Görseli Yan Yana -->
+        <div
+            style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin-bottom: 30px;">
+        </div>
+        <!-- Proje Görseli -->
+        <div class="model-card">
+            <div class="product-image-wrapper vertical">
+                <img src="/static/images/cv analiz.jpeg" alt="Dikey Görsel" class="product-image-adjust">
+            </div>
+        </div>
+
+
+        <!-- Mevcut Bilgi Alanı -->
+        <div class="model-info">
+            <h5> İK Süreçlerinizi Tek Platformda Yönetin!</h5>
+            <p>İnsan kaynakları departmanınız için modern, AI destekli ve kullanıcı dostu bir yönetim paneli
+                sunuyoruz.
+            </p>
+        </div>
+        <div class="platform-features">
+            <h3 class="dynamic-underline">Temel Özellikler</h3>
+            <ul class="features-grid">
+                <li>
+                    <strong>Çalışan Yönetimi:</strong> Tüm çalışanları tek panelden yönetin. Pozisyon, izin durumu
+                    ve daha fazlası.
+                </li>
+                <li>
+                    <strong>Akıllı CV Analizi:</strong> CV'lerden bilgi çıkarımı yapar, pozisyonlara uygun adayları
+                    belirler.
+                </li>
+                <li>
+                    <strong>Toplantı Planlama:</strong> Mülakat ve toplantılar için otomatik bildirimli planlayıcı.
+                </li>
+                <li>
+                    <strong>Verimlilik:</strong> İşe alım süreçlerini dijitalleştirerek zaman kazanın.
+                </li>
+            </ul>
+        </div>
+
+
+        <h3 class="benefits-title fade-slide mt-5 ">Neden Bu Platform?</h3>
+        <div class="platform-benefits">
+            <div class="benefit-card">
+
+                <h4>Kullanımı Kolay ve Modern Arayüz</h4>
+                <p>İnsan kaynakları süreçlerinizi daha hızlı ve etkili şekilde yönetmek için tasarlanmış modern
+                    arayüz.</p>
+            </div>
+            <div class="benefit-card">
+
+                <h4>Zaman Kazandıran Otomasyonlar</h4>
+                <p>İK süreçlerinizi otomatikleştirerek zaman ve iş gücü tasarrufu sağlayın.</p>
+            </div>
+            <div class="benefit-card">
+
+                <h4>Yüksek Aday Uyumluluğu İçin AI Destekli Analiz</h4>
+                <p>Yapay zeka teknolojisiyle adaylarınızı daha doğru bir şekilde değerlendirin ve eşleştirin.</p>
+            </div>
+            <div class="benefit-card">
+
+                <h4>İK Süreçlerinde %100 Kontrol</h4>
+                <p>Tüm İK süreçlerinizin tam kontrolünü elinizde tutarak verimliliği artırın.</p>
+            </div>
+        </div>
+
+        <div class="model-author">AIZMIR HUB</div>
+    </div>
+
+    <br><br><br><br>
+    <h2 class="aiflow-title">AI Product Owner</h2>
+    <div class="model-card">
+        <!-- Logo ve Proje Görseli Yan Yana -->
+        <div
+            style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin-bottom: 30px;">
+            <!-- Proje Görseli -->
+            <div class="model-card">
+                <div class="product-image-wrapper horizontal">
+                    <img src="/static/images/product.jpeg" alt="Yatay Görsel" class="product-image-adjust">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mevcut Bilgi Alanı -->
+        <div class="model-info">
+            <h5>“Ürün Yönetiminin Geleceği Yapay Zekâ ile Şekilleniyor”</h5>
+            <p>Yapay zekâ ile desteklenmiş uçtan uca ürün geliştirme, görev yönetimi ve karar destek platformu.</p>
+        </div>
+        <br><br>
+        <!-- Problem ve Motivasyon -->
+        <div id="ai-product-owner" class="platform-features">
+            <h3>Neden AI Product Owner?</h3>
+            <p>Ürün yöneticileri her gün onlarca kararı; eksik veriyle, manuel araçlarla, dağınık sistemlerle
+                alıyor.</p>
+
+            <div class="features-grid product-owner-benefits">
+                <div class="benefit-card">
+                    <p>Dağınık geri bildirim sistemleri</p>
+                </div>
+                <div class="benefit-card">
+                    <p>Sprint planlama verimsizliği</p>
+                </div>
+                <div class="benefit-card">
+                    <p>Önceliklendirme hataları</p>
+                </div>
+                <div class="benefit-card">
+                    <p>Takım içi iletişim kopuklukları</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- Ürün Modülleri -->
+        <h3 class="benefits-title">Ürün Modülleri</h3>
+        <div class="platform-benefits product-owner-benefits">
+            <div class="benefit-card">
+                <h4>Modül 1 – Akıllı Gereksinim Yöneticisi</h4>
+                <p>Otomatik gereksinim kümeleme, öncelik önerileri, görev formatı üretimi.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Modül 2 – AI Sprint Planlayıcı</h4>
+                <p>Kapasiteye göre görev dağılımı, sprint tahmini, zamanlama çizelgesi.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Modül 3 – Geri Bildirim Analizcisi</h4>
+                <p>NLP ile metin sınıflandırma, kullanıcı içgörüsü, UI üzerinden yanıt.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Modül 4 – Jira Benzeri Görev Panosu</h4>
+                <p>Görev oluşturma, sürükle-bırak, filtreleme, bildirim sistemi.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Modül 5 – Performans & Raporlama Paneli</h4>
+                <p>Görev tamamlama oranı, verimlilik metrikleri, AI gelişim önerileri.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Modül 6 – AI Danışman Asistan</h4>
+                <p>Görev öncelik önerisi, yeni özellik önerileri, ürün stratejisi üretimi.</p>
+            </div>
+        </div>
+
+        <br><br>
+        <!-- Kime Hitap Ediyor -->
+        <h3 class="benefits-title">Kime Hitap Ediyor?</h3>
+        <div class="platform-benefits">
+            <div class="benefit-card">
+                <h4>Ürün Yöneticileri</h4>
+                <p>Daha az eforla daha doğru kararlar alın.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Yazılım Takımları</h4>
+                <p>Sprintlerde netlik ve hız sağlar.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Yöneticiler & CTO’lar</h4>
+                <p>Ölçülebilir ve optimize edilmiş ekip yönetimi sunar.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Startup’lar & KOBİ’ler</h4>
+                <p>Kaynaklarını verimli yöneten agile takımlar için idealdir.</p>
+            </div>
+        </div>
+        <br><br>
+        <!-- Teknik Altyapı -->
+        <h3 class="benefits-title">Teknik Altyapı</h3>
+        <div class="platform-benefits">
+            <div class="benefit-card">
+                <h4>GPT-4 Destekli</h4>
+                <p>Yüksek doğrulukta öneri sistemleri.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>React + FastAPI</h4>
+                <p>Modern ve hızlı uygulama geliştirme altyapısı.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Veritabanı & Servisler</h4>
+                <p>PostgreSQL / Redis tabanlı hızlı veri işleme.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Cloud & API-first</h4>
+                <p>Azure, Google Cloud destekli; kolay entegre API-first mimari.</p>
+            </div>
+        </div>
+
+        <!-- Yazar -->
+        <div class="model-author">CNR AI HUB</div>
+    </div>
+
+
+</div>
+{% endblock %}

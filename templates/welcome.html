@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(ellipse at center, #1a0033 0%, #050013 100%);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  header, nav {
+    display: none !important;
+  }
+
+  .ai-bot {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+    animation: floatAI 5s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  .ai-bot img {
+    width: 180px;
+    filter: drop-shadow(0 0 25px #c77dff);
+  }
+
+  .chat-bubble {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    margin-top: 15px;
+    font-size: 16px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes floatAI {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-55%) translateX(10px); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .welcome-section {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(189, 51, 255, 0.3);
+    animation: fadeInRight 1s ease-out;
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .welcome-section h1 {
+    font-size: 30px;
+    color: #ff99ff;
+    margin-bottom: 15px;
+  }
+
+  .welcome-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .welcome-section li {
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .welcome-section li:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .neon-button {
+    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #a100ff, #6e00ff);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 15px #bd33ff;
+    transition: 0.3s;
+  }
+
+  .neon-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff66ff;
+  }
+
+  .glow-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("{% static 'images/ai-glow-bg.svg' %}");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+  }
+
+</style>
+
+<div class="glow-bg"></div>
+
+<div class="ai-bot">
+  <img src="{% static 'images/ai-chatbot.png' %}" alt="AI Chatbot">
+  <div class="chat-bubble">
+    Merhaba {{ user.first_name|default:"Ziyaretçi" }}!<br>
+    Ben senin AI asistanınım.<br>
+    Bu platformda sana özel fırsatlar, görevler ve AI ürünleriyle dolu bir dünya seni bekliyor! 🚀
+  </div>
+</div>
+
+<div class="welcome-section">
+  <h1>Başlamak için harika şeyler:</h1>
+  <ul>
+    <li>✅ Profilini tamamla ve ilgi alanlarını seç</li>
+    <li>🔍 İlk AI ürününü keşfet</li>
+    <li>🎯 Başlangıç görevlerini tamamla ve rozet kazan</li>
+    <li>🧠 Haftanın önerilen AI modeli: <strong>SmartWriterX</strong></li>
+  </ul>
+  <a href="{% url 'dashboard' %}">
+    <button class="neon-button">🚀 Hadi Başlayalım!</button>
+  </a>
+</div>
+
+{% endblock %}
