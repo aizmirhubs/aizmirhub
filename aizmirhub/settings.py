@@ -1,7 +1,7 @@
 """
 Django settings for aizmirhub project.
 """
-from decouple import config #eklendi
+from decouple import config 
 from pathlib import Path
 import os
 
@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = 'django-insecure-your-secret-key-here'  # Change for production!
 DEBUG = True
-ALLOWED_HOSTS =  ['13.60.93.222', 'aizmirhub.com', 'www.aizmirhub.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
