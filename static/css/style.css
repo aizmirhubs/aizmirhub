@@ -246,6 +246,9 @@ canvas {
     margin-bottom: 15px;
 }
 /* LOGİN CSS */
+/* === LOGIN CSS === */
+
+/* Ana kapsayıcı */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -254,6 +257,8 @@ canvas {
     padding: 20px;
     background: transparent;
 }
+
+/* Form kutusu */
 .auth-form {
     width: 100%;
     max-width: 420px;
@@ -264,14 +269,19 @@ canvas {
     border: 1px solid rgba(168, 85, 247, 0.3);
     color: white;
 }
+
+/* Logo alanı */
 .auth-logo {
     text-align: center;
     margin-bottom: 1rem;
 }
+
 .logo-image {
-    width:100px;
+    width: 100px;
     filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.7));
 }
+
+/* Başlık */
 .auth-title {
     color: #a855f7;
     text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
@@ -281,14 +291,17 @@ canvas {
     padding-bottom: 0.8rem;
     border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
+
+/* Form öğeleri */
 .form-group {
     margin-bottom: 1.8rem;
 }
+
 .form-label {
     display: block;
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.973);
+    color: rgba(255, 255, 255, 0.95);
 }
 .form-control {
     width: 100%;
@@ -296,16 +309,35 @@ canvas {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
-    color: white;
+    color: white !important;
     font-size: 1rem;
     transition: all 0.3s ease;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
 }
+/* Placeholder */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+}
+/* Focus durumu */
 .form-control:focus {
     border-color: #a855f7;
     outline: none;
     box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
     background: rgba(255, 255, 255, 0.08);
 }
+/* Autofill çözümü (Chrome & Safari) */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.438) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: rgba(255, 255, 255, 0.466);
+}
+/* Giriş butonu */
 .btn-primary {
     width: 100%;
     padding: 1rem;
@@ -325,6 +357,7 @@ canvas {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
 }
+/* Alt bağlantılar */
 .auth-footer {
     display: flex;
     justify-content: center;
@@ -346,25 +379,26 @@ canvas {
     color: rgba(255, 255, 255, 0.3);
     margin: 0 0.5rem;
 }
-/* Responsive Tasarım */
+/* Responsive (Mobil) */
 @media (max-width: 480px) {
     .auth-form {
         padding: 1.8rem;
         max-width: 340px;
     }
-    
+
     .logo-image {
         max-width: 150px;
     }
-    
+
     .auth-title {
         font-size: 1.7rem;
     }
-    
+
     .form-control {
         padding: 0.8rem 1rem;
     }
 }
+
 /* SCROLL */
 .scrolling-container {
     width: 100%;
