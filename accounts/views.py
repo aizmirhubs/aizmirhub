@@ -160,16 +160,15 @@ class ShowroomView(TemplateView):
         return context
 
 
-# Micro AI Ajan View
-class MicroAIAjansView(TemplateView):
-    template_name = 'microaiajans.html'
+class HubEventView(TemplateView):  # hubevent → HubEventView
+    template_name = 'hubevent.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page_title'] = "Micro AI Ajan Sayfası"
+        context['page_title'] = "Hub Event"
         context['features'] = ["Özellik 1", "Özellik 2", "Özellik 3"]
         return context
-
+    
 def showroom(request):
     models = AIModel.objects.all()
     return render(request, 'showroom.html', {'models': models})

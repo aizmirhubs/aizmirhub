@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .circle-button {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+
+    /* Hover büyüme efekti */
+    .circle-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Tooltip (isteğe bağlı) */
+    .circle-button:hover::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -32px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(30, 30, 30, 0.9);
+        color: white;
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 99;
+    }
+</style>
+<div class="ai-hub-card">
+    <div class="ai-hub-content">
+
+        <div class="ai-hub-feature">
+            <h3>Yapay Zeka ve İş Süreçleri Entegrasyonu Zirvesi</h3>
+            <br>
+            <ul>
+                <li>
+                    🗓️ 29 - 30 Mayıs 2025 / 09.30 - 17.30</li>
+                <li>
+                    📌 Originn Bornova / İzmir
+                </li>
+                <li>
+                    🎥 Katılım Seçeneği: Fiziksel ya da Online (Hibrit)
+                </li>
+            </ul>
+        </div>
+        <div class="ai-hub-features">
+            <p class="ai-hub-subtitle">Çeşitli yurt içi ve yurt dışı projelerde silikon vadisinde geliştirilen
+                projelerde görev aldım ve takım liderliği yapmıştır.
+                Yapay Zeka Eğitmenliği yapıyor.
+                Python programlama dilinde çalışmalarımı sürdürmekteyim. Python programlama dilinde çalışmalarımı
+                sürdürmekteyim. </p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="https://www.groupbsp.co/isteyapayzekaizmir" class="ai-hub-doc-button"
+                style="padding: 8px 12px; font-size: 14px;">KAYIT İÇİN →</a>
+        </div>
+        <br>
+
+    </div>
+    <div class="ai-hub-image">
+        <img src="/static/images/Hub Event/bsp.png" style="height: 310px; width: 320px;" alt="Alzmir Hub Illustration">
+    </div>
+</div>
+<br><br>
+
+{% endblock %}
