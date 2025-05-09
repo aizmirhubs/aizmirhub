@@ -142,13 +142,11 @@ class CustomPasswordResetConfirmView(FormView):
     def token_expired_response(self):
         return render(self.request, 'registration/password_reset_link_expired.html')
 
-
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'registration/password_reset_complete.html'
 
     def get(self, request, *args, **kwargs):
         return redirect('login')
-
 
 # Showroom View
 class ShowroomView(TemplateView):
@@ -158,7 +156,6 @@ class ShowroomView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['range'] = range(8)
         return context
-
 
 class HubEventView(TemplateView):  # hubevent → HubEventView
     template_name = 'hubevent.html'

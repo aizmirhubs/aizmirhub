@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from accounts.views import HubEventView  # 🔥 ÖNEMLİ: Bu satırı ekleyin!
+from accounts.views import HubEventView  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,7 +14,7 @@ urlpatterns = [
     path('consulting/', TemplateView.as_view(template_name='consulting.html'), name='consulting'),
     path('saas/', TemplateView.as_view(template_name='saas.html'), name='saas'),
     path('aizmirdream/', TemplateView.as_view(template_name='aizmirdream.html'), name='aizmirdream'),
-    path('hubevent/', HubEventView.as_view(), name='hubevent'),  
+    path('hubevent/', HubEventView.as_view(), name='hubevent'),
     path('otomasyon/', TemplateView.as_view(template_name='otomasyon.html'), name='otomasyon'),
 ]
 
