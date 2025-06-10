@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = 'django-insecure-your-secret-key-here'  # Change for production!
-DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+DEBUG = False
+ALLOWED_HOSTS = ['aizmirhub.com', 'www.aizmirhub.com', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'widget_tweaks',
-    
     
     # Local apps
     'accounts',
@@ -42,7 +41,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'aizmirhub.urls'
 
- 
 TEMPLATES = [  
     {  
         'BACKEND': 'django.template.backends.django.DjangoTemplates',  
@@ -87,7 +85,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 LANGUAGE_CODE = 'tr-tr'
