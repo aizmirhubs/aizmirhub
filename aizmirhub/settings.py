@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = 'django-insecure-your-secret-key-here'  # Change for production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['aizmirhub.com', 'www.aizmirhub.com', '127.0.0.1', 'localhost']
 
 # Application definition
