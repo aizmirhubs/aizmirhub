@@ -121,8 +121,6 @@ PASSWORD_RESET_TIMEOUT = 600  # saniye cinsinden (600 saniye = 10 dakika)
 
 
 
-
-
 # Site framework
 SITE_ID = 1
 
